@@ -1,5 +1,5 @@
 :root {
-    --primary-color:  #4096ff;
+    --primary-color: #4096ff;
     --secondary-color: #69b1ff;
     --danger-color: #ff7875;
     --text-color: #333;
@@ -10,36 +10,7 @@
     --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* User Information Styles */
-.user-info {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 16px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-}
 
-.user-info:hover {
-    box-shadow: var(--hover-shadow);
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-name {
-    font-weight: 600;
-    color: var(--primary-color);
-}
 
 /* Base Styles */
 body {
@@ -135,7 +106,8 @@ table {
     border-spacing: 0;
 }
 
-th, td {
+th,
+td {
     padding: 16px;
     text-align: left;
 }
@@ -301,8 +273,15 @@ tr:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .error-icon {
@@ -374,4 +353,52 @@ tr:hover {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #e9ecef;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #4096ff;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header h1 {
+    margin: 0;
+    color: white;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+    padding: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.user-name {
+    color: white;
+    font-weight: bold;
+}
+
+.container {
+    padding: 0 20px;
 }
