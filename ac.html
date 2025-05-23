@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="access-denied-page">
+    <div class="container">
+        <div class="error-container">
+            <div class="error-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80">
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z" fill="#e74c3c"/>
+                </svg>
+            </div>
+            <h1 class="error-title">Access Denied</h1>
+            <div class="error-message">
+                <p>Sorry, you don't have permission to access this application.</p>
+                <p>You need to belong to one of the following groups:</p>
+                <div class="group-container">
+                    <div class="group-item">SFPCCAR</div>
+                    <div class="group-item">SFPCECL</div>
+                    <div class="group-item">SFPECB</div>
+                    <div class="group-item">SFPICAAP</div>
+                </div>
+            </div>
+            <a th:href="@{/logout}" class="btn-primary">Return to Login</a>
+            <div class="contact-info">
+                If you believe this is an error, please contact the system administrator for assistance.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
