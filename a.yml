@@ -1,0 +1,34 @@
+  security:
+    oauth2:
+      client:
+        provider:
+          azure:
+            # Azure AD Issuer URI
+            issuer-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/v2.0
+            # Authorization Endpoint
+            authorization-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/oauth2/v2.0/authorize
+            # Token Endpoint
+            token-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/oauth2/v2.0/token
+            # JWK Set URI
+            jwk-set-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/discovery/v2.0/keys
+            # User Info Endpoint
+            user-info-uri: https://graph.microsoft.com/oidc/userinfo
+            # Username Attribute
+            user-name-attribute: name
+        registration:
+          azure:
+            provider: azure
+            client-id: ${AZURE_CLIENT_ID}
+            client-secret: ${AZURE_CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "${web_domain:}/secure/auth"      
+            scope:
+            - openid
+            - email
+            - profile
+            - offline_access
+            - api://f1e45ff1-c227-4b8a-9d0d-cce0bad26ddd/SFP.Read.All
+      resourceserver:
+        jwt:
+          issuer-uri: https://login.microsoftonline.com/${AZURE_TENANT_ID}/v2.0 # 例如: https://login.microsoftonline.com/YOUR_TENANT_ID/v2.0
+          audiences: api://${AZURE_CLIENT_ID} # 例如: api://YOUR_CLIENT_ID
